@@ -19,6 +19,8 @@ import unFullScreenIcon from './icon--unfullscreen.svg';
 import scratchLogo from '../menu-bar/scratch-logo.svg';
 import styles from './stage-header.css';
 
+import RecordingButton from '../recording-button/RecordingButtonLite.jsx'
+
 const messages = defineMessages({
     largeStageSizeMessage: {
         defaultMessage: 'Switch to large stage',
@@ -104,6 +106,7 @@ const StageHeaderComponent = function (props) {
                     <Controls vm={vm} />
                     {stageButton}
                 </Box>
+                <RecordingButton/>
             </Box>
         );
     } else {

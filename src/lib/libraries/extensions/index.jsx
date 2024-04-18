@@ -13,6 +13,8 @@ import videoSensingInsetIconURL from './videoSensing/video-sensing-small.svg';
 import text2speechIconURL from './text2speech/text2speech.png';
 import text2speechInsetIconURL from './text2speech/text2speech-small.svg';
 
+import speech2textIconURL from './speech2text/speech.png';
+
 import translateIconURL from './translate/translate.png';
 import translateInsetIconURL from './translate/translate-small.png';
 
@@ -132,6 +134,28 @@ export default [
     {
         name: (
             <FormattedMessage
+                defaultMessage="Speech to Text"
+                description="Name for the Speech to Text extension"
+                id="gui.extension.speech2text.name"
+            />
+        ),
+        extensionId: 'speech2text',
+       
+        iconURL: speech2textIconURL,
+       
+        description: (
+            <FormattedMessage
+                defaultMessage="Make your projects listen."
+                description="Description for the speech to text extension"
+                id="gui.extension.speech2text.description"
+            />
+        ),
+        featured: true,
+        internetConnectionRequired: true
+    },
+    {
+        name: (
+            <FormattedMessage
                 defaultMessage="Translate"
                 description="Name for the Translate extension"
                 id="gui.extension.translate.name"
@@ -150,6 +174,7 @@ export default [
         ),
         featured: true,
         internetConnectionRequired: true
+        
     },
     {
         name: 'Makey Makey',
