@@ -23,6 +23,7 @@ const RecordingButtonLite = () => {
       audio: true,
       preferCurrentTab:true
     });
+    if (stream){
     console.log("stream in create",stream)
     setstream(stream);
     setstreamstatus(true);
@@ -32,7 +33,7 @@ const RecordingButtonLite = () => {
       setstreamstatus(false)
       setstream(null);
       stopRecording();
-    }
+    }}
    }
 
   //  // work with this this tells when user stops permission
@@ -56,7 +57,7 @@ const RecordingButtonLite = () => {
        
       }
         
-      
+    if(stream){
     
         // work with this this tells when user stops permission
        stream.getVideoTracks()[0].onended=()=>{
@@ -101,7 +102,7 @@ const RecordingButtonLite = () => {
       timerRef.current = setInterval(() => {
         setTimer((prev) => prev + 1);
       }, 1000);
-    } catch (error) {
+    } }catch (error) {
       console.error('Error accessing display media:', error);
     }
   };
@@ -119,8 +120,8 @@ const RecordingButtonLite = () => {
     return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
   };
 
-  
 
+  
 
 
   return (
