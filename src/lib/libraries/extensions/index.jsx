@@ -13,7 +13,7 @@ import videoSensingInsetIconURL from './videoSensing/video-sensing-small.svg';
 import text2speechIconURL from './text2speech/text2speech.png';
 import text2speechInsetIconURL from './text2speech/text2speech-small.svg';
 
-import speech2textIconURL from './speech2text/speech.png';
+import speech2textIconURL from './speech2text/speech.png'
 
 import translateIconURL from './translate/translate.png';
 import translateInsetIconURL from './translate/translate-small.png';
@@ -47,6 +47,8 @@ import gdxforIconURL from './gdxfor/gdxfor.png';
 import gdxforInsetIconURL from './gdxfor/gdxfor-small.svg';
 import gdxforConnectionIconURL from './gdxfor/gdxfor-illustration.svg';
 import gdxforConnectionSmallIconURL from './gdxfor/gdxfor-small.svg';
+import newextensionIconURL from './newextension/newextension.png';
+import newextensionInsetIconURL from './newextension/newextension-icon.png';
 
 export default [
     {
@@ -140,13 +142,11 @@ export default [
             />
         ),
         extensionId: 'speech2text',
-       
         iconURL: speech2textIconURL,
-       
         description: (
             <FormattedMessage
-                defaultMessage="Make your projects listen."
-                description="Description for the speech to text extension"
+                defaultMessage="Make your listen"
+                description="Description for the Speech to Text extension"
                 id="gui.extension.speech2text.description"
             />
         ),
@@ -174,7 +174,6 @@ export default [
         ),
         featured: true,
         internetConnectionRequired: true
-        
     },
     {
         name: 'Makey Makey',
@@ -342,5 +341,25 @@ export default [
             />
         ),
         helpLink: 'https://scratch.mit.edu/vernier'
+    },
+    {
+        name:'Chat Bot',
+        extensionId:'myextensions',
+        collaborator:'Me',
+        iconURL:newextensionIconURL,
+        insetIconURL:newextensionInsetIconURL,
+        description:(
+            <FormattedMessage
+              defaultMessage="This extension gives info for any text inserted"
+              description="my extensions"
+              id="gui.extension.myextensions.description"
+            />
+        ),
+        featured:true,
+        disabled:false,
+        internetConnectionRequired:true,
+        bluetoothRequired:false,
+        helpLink:'https://scratch.mit.edu/wedo'
     }
+    
 ];
