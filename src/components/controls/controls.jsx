@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {defineMessages, injectIntl, intlShape} from 'react-intl';
 
 import GreenFlag from '../green-flag/green-flag.jsx';
@@ -32,6 +32,29 @@ const Controls = function (props) {
         turbo,
         ...componentProps
     } = props;
+
+    const [elapsedTime, setElapsedTime] = useState(0);
+    const intervalRef = useRef(null);
+
+    useEffect(() => {
+        if (active) {
+            const start = performance.now();
+            intervalRef.current = setInterval(() => {
+                setElapsedTime(performance.now() - start);
+            }, 10);
+            return () => clearInterval(intervalRef.current);
+        } else {
+            clearInterval(intervalRef.current);
+        }
+    }, [active]);
+
+    useEffect(() => {
+        if (!active) {
+            const timer = elapsedTime.toFixed(3);
+            localStorage.setItem('timer', timer);
+        }
+    }, [active, elapsedTime]);
+
     return (
         <div
             className={classNames(styles.controlsContainer, className)}
@@ -47,6 +70,9 @@ const Controls = function (props) {
                 title={intl.formatMessage(messages.stopTitle)}
                 onClick={onStopAllClick}
             />
+            <span style={{marginTop:'4px',fontSize:'medium'}} title="Execution Time">
+                {!active ? `⏱️${(elapsedTime / 1000).toFixed(3)} sec` : `⏱️${(elapsedTime / 1000).toFixed(3)} sec`}
+            </span>
             {turbo ? (
                 <TurboMode />
             ) : null}
