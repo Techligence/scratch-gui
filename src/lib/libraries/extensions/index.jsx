@@ -13,6 +13,8 @@ import videoSensingInsetIconURL from './videoSensing/video-sensing-small.svg';
 import text2speechIconURL from './text2speech/text2speech.png';
 import text2speechInsetIconURL from './text2speech/text2speech-small.svg';
 
+import speech2textIconURL from './speech2text/speech.png'
+
 import translateIconURL from './translate/translate.png';
 import translateInsetIconURL from './translate/translate-small.png';
 
@@ -45,6 +47,8 @@ import gdxforIconURL from './gdxfor/gdxfor.png';
 import gdxforInsetIconURL from './gdxfor/gdxfor-small.svg';
 import gdxforConnectionIconURL from './gdxfor/gdxfor-illustration.svg';
 import gdxforConnectionSmallIconURL from './gdxfor/gdxfor-small.svg';
+import newextensionIconURL from './newextension/newextension.png';
+import newextensionInsetIconURL from './newextension/newextension-icon.png';
 
 import docxSmallIcon from './docx/icons8-document (1).svg';
 import docxLargeIcon from './docx/docx_large  (1).jpg';
@@ -132,6 +136,26 @@ export default [
                 defaultMessage="Make your projects talk."
                 description="Description for the Text to speech extension"
                 id="gui.extension.text2speech.description"
+            />
+        ),
+        featured: true,
+        internetConnectionRequired: true
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="Speech to Text"
+                description="Name for the Speech to Text extension"
+                id="gui.extension.speech2text.name"
+            />
+        ),
+        extensionId: 'speech2text',
+        iconURL: speech2textIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="Make your listen"
+                description="Description for the Speech to Text extension"
+                id="gui.extension.speech2text.description"
             />
         ),
         featured: true,
@@ -359,4 +383,24 @@ export default [
             featured: true,
             helpLink: 'https://scratch.mit.edu'
         },
-    ];
+    {
+        name:'Chat Bot',
+        extensionId:'myextensions',
+        collaborator:'Me',
+        iconURL:newextensionIconURL,
+        insetIconURL:newextensionInsetIconURL,
+        description:(
+            <FormattedMessage
+              defaultMessage="This extension gives info for any text inserted"
+              description="my extensions"
+              id="gui.extension.myextensions.description"
+            />
+        ),
+        featured:true,
+        disabled:false,
+        internetConnectionRequired:true,
+        bluetoothRequired:false,
+        helpLink:'https://scratch.mit.edu/wedo'
+    }
+    
+];
