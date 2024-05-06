@@ -50,6 +50,14 @@ import gdxforConnectionSmallIconURL from './gdxfor/gdxfor-small.svg';
 import newextensionIconURL from './newextension/newextension.png';
 import newextensionInsetIconURL from './newextension/newextension-icon.png';
 
+import docxSmallIcon from './docx/icons8-document (1).svg';
+import docxLargeIcon from './docx/docx_large  (1).jpg';
+
+import sheetsSmallIcon from './sheets/sheets_small.png';
+import sheetsLargeIcon from './sheets/sheets_large.png';
+
+
+
 export default [
     {
         name: (
@@ -342,6 +350,39 @@ export default [
         ),
         helpLink: 'https://scratch.mit.edu/vernier'
     },
+    {
+        name: 'DocBuilder',  
+        collaborator:'Team A',
+        extensionId: 'docx',
+        iconURL: docxLargeIcon,
+        insetIconURL: docxSmallIcon ,
+        description: (
+            <FormattedMessage
+                defaultMessage="Create your own documentation"
+                description="Description for the docx extension"
+                id="gui.extension.docx.description"
+            />
+        ),
+        featured: true,
+        helpLink: 'https://scratch.mit.edu'
+    },
+    {
+        name: 'G-Sheets',  
+        collaborator:'Team A',
+        extensionId: 'sheets',
+        iconURL: sheetsLargeIcon ,
+        insetIconURL: sheetsSmallIcon,
+        description: (
+            <FormattedMessage
+            defaultMessage="sheets"
+            description="Description for the g-sheets extension"
+            id="gui.extension.sheets.description"
+            />
+            ),
+            internetConnectionRequired: true,
+            featured: true,
+            helpLink: 'https://scratch.mit.edu'
+        },
     {
         name:'Chat Bot',
         extensionId:'myextensions',
